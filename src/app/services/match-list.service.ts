@@ -12,9 +12,11 @@ export class MatchListService {
 
   constructor(private http: HttpClient) { }
 
-  getMatches(): Observable<any>{
-    return this.http.get("http://api.football-data.org/v2/competitions/2114/matches", {headers: new HttpHeaders({
+  getMatches(giornata): Observable<any>{
+    return this.http.get("http://api.football-data.org/v2/competitions/SA/matches?matchday="+giornata, {headers: new HttpHeaders({
       'X-Auth-Token' : this.apiKey})}
       );
   }
+
+  
 }
