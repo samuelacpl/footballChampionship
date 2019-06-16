@@ -1,0 +1,41 @@
+<div id="match" class="w3-modal">
+    <div class="w3-modal-content">
+      <header class="w3-container w3-teal">
+        <span (click)="turnOff()"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>{{getNameMatch()}}</h2>
+      </header>
+      <div class="w3-container">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h4>{{getHomeTeam()}}</h4>
+              <ul  >
+                <li>Formazione {{getHomeTeam()}}  (Versione a pagamento)</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h4>{{getAwayTeam()}}</h4>
+              <ul  >
+                <li>Formazione {{getAwayTeam()}}  (Versione a pagamento)</li>
+              </ul>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                {{getInfoMatch()}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                {{getPenalty()}}
+              </div>
+            </div>
+        </div>
+      </div>
+      <footer class="w3-container w3-teal">
+        <p>{{getReferees()}}</p>
+      </footer>
+    </div>
+  </div>
+
