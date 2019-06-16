@@ -25,3 +25,5 @@ First must be downloaded and opened in Visual Studio Code, then compiled through
 (Works both on macOS and Windows)
 
 If there are some troubles compiling, try to type "--port" right after the "ng serve" command.
+
+
