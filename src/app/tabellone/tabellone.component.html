@@ -1,9 +1,34 @@
-<table class="table table-striped table-bordered">
-    <thead>
-      <tr (click)="getMatch()"> ciao
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-</table>
+<div>
+  <div class="arrow-mirror">
+      <img id="arrow-mirror"  (click)="precDay()" src="http://pixsector.com/cache/d317f9c9/avefdb1ad8fbf8d8b72a2.png">
+  </div>
+    <table class="table">
+        <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th scope="col">{{day}}° Giornata</th>
+              </tr>
+        </thead>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Home</th>
+                <th scope="col">Score</th>
+                <th scope="col">Away</th>
+              </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let match of matches" (click)="showMatch(match)">
+              <th scope="col">{{match.homeTeam.name}}</th>
+              <th scope="col">{{match.score.fullTime.homeTeam}} - {{match.score.fullTime.awayTeam}}</th>
+              <th scope="col">{{match.awayTeam.name}}</th>
+          </tr>
+        </tbody>
+    </table>
+    <div class="arrow">
+        <img id="arrow" (click)="nextDay()" src="http://pixsector.com/cache/d317f9c9/avefdb1ad8fbf8d8b72a2.png">
+    </div>
+</div>
+
+
+<app-match *ngIf="getDivMatch()"></app-match>
