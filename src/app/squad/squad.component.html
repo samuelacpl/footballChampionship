@@ -1,0 +1,40 @@
+<table>
+  <tr>
+    <th *ngFor="let img of src" ><img [src]="img" class="logo" (click)="getInfoSquad(src.indexOf(img))"></th>
+  </tr>
+</table>
+
+<div *ngIf="divB">
+    <div id="squad" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+          <header class="w3-container w3-light-grey">
+            <span (click)="turnOff()"
+            class="w3-button w3-display-topright">&times;</span>
+            <h2>{{data.shortName}}</h2>
+          </header>
+          <div class="w3-bar w3-border-bottom">
+              <button class="tablink w3-bar-item w3-button" (click)="info()">Informazionì generali</button>
+              <button class="tablink w3-bar-item w3-button" (click)="rosa()">Rosa</button>
+              <button class="tablink w3-bar-item w3-button" (click)="competizioni()">Competizioni Attive</button>
+          </div>
+          <div *ngIf="subDiv==0" class="w3-container city">
+              <p>Nome completo: {{data.name}}</p>
+              <p>Colori ufficiali: {{data.clubColors}}</p>
+              <p>Email: {{data.email}}</p>
+              <p>Telefono: {{data.phone}}</p>
+              <p>Sito web: <a href="{{data.website}}" ></a>{{data.website}}</p>
+          </div>
+          <div *ngIf="subDiv==1" class="w3-container city">
+              <ul>Rosa Completa
+                <li *ngFor="let player of data.squad">{{player.shirtNumber}} {{player.name}}  -  {{player.position}} ({{player.nationality}})</li>
+              </ul>
+          </div>
+          <div *ngIf="subDiv==2" class="w3-container city">
+            <h5 *ngFor="let c of data.activeCompetitions">{{c.name}}</h5>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
