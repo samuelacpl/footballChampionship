@@ -21,7 +21,7 @@ In order to get infos about the matches, this project uses the free APIs from ht
 Building suggestions:
 This project is easily buildable.
 First must be downloaded and opened in Visual Studio Code, then compiled through the terminal.
-To install the node_modules folders you must type as the firts command "npm install" and "npm install -g @angular/cli".
+To install the node_modules folders you must type as the firts command "npm install".
 After this, you can open it by clicking on the link suggested by the terminal.
 
 (Works both on macOS and Windows)
